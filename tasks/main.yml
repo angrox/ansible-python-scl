@@ -6,7 +6,7 @@
   when: ansible_distribution == 'CentOS'
 
 - name: Enables SCL (RHEL only)
-  command: yum-config-manager --enable rhel-server-rhscl-7-rpms
+  command: "yum-config-manager --enable rhel-server-rhscl-{{ ansible_distribution_major_version }}-rpms"
   when: ansible_distribution == 'Red Hat Enterprise Linux'
   become: true
 
