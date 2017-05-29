@@ -13,7 +13,7 @@ before_install:
   - sudo docker pull centos:${OS_VERSION}
 
 install:
-  - sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/azure-cli:ro --name centos-${OS_VERSION} centos:${OS_VERSION} sleep 300
+  - sudo docker run --detach --volume="${PWD}":/etc/ansible/roles/python-scl:ro --name centos-${OS_VERSION} centos:${OS_VERSION} sleep 300
   - sudo docker exec centos-${OS_VERSION} yum -y install epel-release
   - sudo docker exec centos-${OS_VERSION} yum -y install ansible
 
