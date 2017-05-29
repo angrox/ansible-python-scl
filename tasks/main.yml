@@ -1,0 +1,25 @@
+- name: Install centos-release-scl-rh (CentOS only)
+  package:
+    name: centos-release-scl-rh
+    state: present
+  become: true
+  when: ansible_distribution == 'CentOS'
+
+- name: Enables SCL (RHEL only)
+  command: yum-config-manager --enable rhel-server-rhscl-7-rpms
+  when: ansible_distribution == 'Red Hat Enterprise Linux'
+  become: true
+
+- name: Install python version
+  package:
+    name: "rh-python{{ scl_python_version }}"
+    state: present
+  become: true
+
+- name: Globally enable scl python
+  lineinfile:
+    path: /etc/profile.d/scl-python.sh
+    line: "source /opt/rh/rh-python{{ scl_python_version }}/enable"
+    create: yes
+  become: true
+

@@ -1,0 +1,16 @@
+---
+galaxy_info:
+  author: 'Martin Zehetmyer'
+  description: 'Installs SCL Python version and enables it globally'
+  license: Apache License 2.0
+  min_ansible_version: '2.3'
+  platforms:
+    - name: EL
+      versions:
+        - 6
+        - 7
+  galaxy_tags:
+    - system
+    - basic
+    - updates
+dependencies: []
