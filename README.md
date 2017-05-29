@@ -1,5 +1,8 @@
 # Python SCL
 
+[![Build Status](https://travis-ci.org/angrox/ansible-python-scl.svg?branch=master)](https://travis-ci.org/angrox/ansible-python-scl)
+
+
 This module has the following features:
 * Installs/Enables Softwarecollections on CentOS and RHEL
 * Installs a SCL python version
